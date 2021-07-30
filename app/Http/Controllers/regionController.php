@@ -49,7 +49,7 @@ class regionController extends Controller
     }
     //MANDAR A LLAMAR DESDE NUESTRA BASE DE DATOS POR PAIS Y NOMBRE
     public function obtenerRegionPais($pais){
-        $regionPais = regionModel :: where('1')->get();
+        $regionPais = regionModel :: where('country',$pais)->get();
         return ['Pais' => $regionPais];
     }
 
