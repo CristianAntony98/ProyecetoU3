@@ -19,3 +19,7 @@ Route::get('/', function () {
 });
 Route::get('get/obtenerPaises', [paisController::class, 'obtenerPaises'])->name('obtener.genero');
 Route::get('get/obtenerRegiones/{country}', [regionController::class, 'obtenerRegiones'])->name('obtener.genero');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
