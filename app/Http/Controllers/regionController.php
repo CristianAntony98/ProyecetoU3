@@ -53,6 +53,11 @@ class regionController extends Controller
         return ['Pais' => $regionPais];
     }
 
+    public function obtenerRegionesBD(){
+        $regionPais = regionModel :: all();
+        return ['Pais' => $regionPais];
+    }
+
     public function obtenerRegionNombre($nombre){
         $regionNombre = regionModel :: where('region',$nombre)->get();
         return ['Region' => $regionNombre];

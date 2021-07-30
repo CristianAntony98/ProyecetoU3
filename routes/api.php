@@ -23,10 +23,12 @@ Route::get('/saludo', function(){
 echo json_encode("probando xD");
 });
 
-Route::get('get/obtenerPaises', [paisController::class, 'obtenerPaises'])->name('obtener.genero');
-Route::get('get/obtenerPaisId/{id}', [paisController::class, 'obtenerPaisId'])->name('obtener.nombre');
-Route::get('get/obtenerPaisNombre/{nombre}', [paisController::class, 'obtenerPaisNombre'])->name('obtener.nombre');
+Route::get('get/obtenerPaises', [paisController::class, 'obtenerPaises'])->name('obtener.genero');// Paises de la api a nuestra BD
+Route::get('get/obtenerPaisesBD', [paisController::class, 'obtenerPaisesBD'])->name('obtener.genero');// Paises que estan en nuestra BD
+Route::get('get/obtenerPaisId/{id}', [paisController::class, 'obtenerPaisId'])->name('obtener.nombre');// Obtener un pais mediante su id (ad, af al...)
+Route::get('get/obtenerPaisNombre/{nombre}', [paisController::class, 'obtenerPaisNombre'])->name('obtener.nombre');// Obtener un pais mediante su nombre
 
-Route::get('get/obtenerRegiones/{country}', [regionController::class, 'obtenerRegiones'])->name('obtener.regiones');
-Route::get('get/obtenerRegionPais/{pais}', [regionController::class, 'obtenerRegionPais'])->name('obtener.id');
-Route::get('get/obtenerRegionNombre/{nombre}', [regionController::class, 'obtenerRegionNombre'])->name('obtener.nombre');
+Route::get('get/obtenerRegiones/{country}', [regionController::class, 'obtenerRegiones'])->name('obtener.regiones');// Regiones de la api a nuestra BD
+Route::get('get/obtenerRegionesBD', [regionController::class, 'obtenerRegionesBD'])->name('obtener.regiones');// Regiones que estan en nuestra BD
+Route::get('get/obtenerRegionPais/{pais}', [regionController::class, 'obtenerRegionPais'])->name('obtener.id');// Obtener una region mediante su id (ad, af al...)
+Route::get('get/obtenerRegionNombre/{nombre}', [regionController::class, 'obtenerRegionNombre'])->name('obtener.nombre');// Obtener una region mediante su nombre

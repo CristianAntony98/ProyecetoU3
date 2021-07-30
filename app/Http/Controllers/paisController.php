@@ -53,6 +53,11 @@ class paisController extends Controller
         return ['pais'=>$paisId];
     }
 
+    public function obtenerPaisesBD(){
+        $paisId = paisModel :: all();
+        return ['pais'=>$paisId];
+    }
+
     public function obtenerPaisNombre($nombre){
         $paisNombre = paisModel :: where('name', $nombre)->get();
         return ['pais'=>$paisNombre];
